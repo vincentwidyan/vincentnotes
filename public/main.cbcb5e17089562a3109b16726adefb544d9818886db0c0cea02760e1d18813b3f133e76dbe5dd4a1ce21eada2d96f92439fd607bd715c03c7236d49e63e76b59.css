@@ -14600,7 +14600,7 @@ h5,
 h6,
 .h6,
 .section-nav summary {
-  font-weight: normal; }
+  font-weight: 0.8rem; }
 
 ol {
   padding-left: 1rem; }
