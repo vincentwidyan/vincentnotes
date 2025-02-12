@@ -1,0 +1,127 @@
+// Put your custom SCSS code here
+/* montserrat-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Wix Madefor Display";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/wix-madefor-display/wix-madefor-text-v13-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Wix Madefor Display";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/wix-madefor-display/wix-madefor-text-v13-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
+
+
+:root {
+  --bs-border-color: #23262f;
+  --bs-border-radius: 0.25rem;
+}
+
+
+code,
+.callout,
+#toTop,
+figure img {
+  border-radius: var(--bs-border-radius) !important;
+}
+
+p,
+ol,
+ul,
+details,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.section-nav summary {
+  font-size: medium;
+  font-weight: normal;
+}
+
+l {
+  padding-left: 1rem;
+}
+
+main.docs-content ol {
+  list-style: none;
+  counter-reset: ol-counter;
+  padding-left: 0;
+}
+main.docs-content ol li::before {
+  content: counter(ol-counter) ". ";
+  counter-increment: ol-counter;
+}
+main.docs-content ul {
+  padding-left: 1.25rem;
+}
+main.docs-content ol li::before,
+main.docs-content ul li::marker {
+  color: var(--bs-tertiary-color);
+}
+
+.page-links li:not(:first-child) {
+  border-top-style: solid !important;
+}
+
+
+
+
+.navbar-brand {
+  font-size: 1.4rem;
+}
+
+.navbar {
+  backdrop-filter: blur(2px);
+}
+
+
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.4rem;
+}
+h3 {
+  font-size: 1rem;
+}
+h4 {
+  font-size: 1rem;
+}
+h5 {
+  font-size: 1rem;
+}
+h6 {
+  font-size: 1rem;
+}
+
+img {
+  cursor: pointer;
+}
+img.zoomed {
+  top: 50%;
+  left: 50%;
+  width: 75vw;
+  height: 75vh;
+  position: fixed;
+  z-index: 100001;
+  transform: translate(-50%, -50%);
+}
+
+#background-overlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 100000;
+  background: black;
+}

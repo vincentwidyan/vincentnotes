@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Welcome to Doks on vincentwidyan</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Welcome to Doks on vincentwidyan</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) 2020-2024 Thulite</copyright>
+    <lastBuildDate>Tue, 27 Feb 2024 09:30:56 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Example Post</title>
+      <link>http://localhost:1313/blog/example-post/</link>
+      <pubDate>Thu, 07 Sep 2023 16:27:22 +0200</pubDate>
+      <guid>http://localhost:1313/blog/example-post/</guid>
+      <description>You can use blog posts for announcing product updates and features.</description>
+    </item>
+    <item>
+      <title>Konversi String ke Datetime</title>
+      <link>http://localhost:1313/docs/guides/konversi-string-ke-datetime/</link>
+      <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
+      <guid>http://localhost:1313/docs/guides/konversi-string-ke-datetime/</guid>
+      <description>&lt;p&gt;Seringkali ketika sedang melakukan &lt;em&gt;coding&lt;/em&gt; dengan Python, terdapat waktu yang direpresentasikan dengan tipe data string dan dibutuhkan konversi kembali ke nilai &lt;code&gt;datetime&lt;/code&gt; dengan tipe data struct untuk tujuan tertentu. Di tutorial kali ini, akan dijelaskan mengenai cara konversi tipe data string ke &lt;code&gt;datetime&lt;/code&gt; di Python.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Konversi Datetime ke String</title>
+      <link>http://localhost:1313/docs/guides/konversi-datetime-ke-string/</link>
+      <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
+      <guid>http://localhost:1313/docs/guides/konversi-datetime-ke-string/</guid>
+      <description>&lt;p&gt;Saat coding dengan Python, terkadang kita akan membutuhkan sebuah nilai Datetime/Timestamp yang perlu disimpan dalam tipe data &lt;code&gt;string&lt;/code&gt;. Selain mungkin kita akan menggunakannya untuk debugging/print, kita dapat mengguanak skema ini untuk menamai file output kita. Di tutorial kali ini, akan dijelaskan langkah-langkah untuk melakukan konversi tipe data Datetime ke String di Python.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Konversi Epoch ke Time Format</title>
+      <link>http://localhost:1313/docs/guides/konversi-epoch-ke-time-format/</link>
+      <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
+      <guid>http://localhost:1313/docs/guides/konversi-epoch-ke-time-format/</guid>
+      <description>&lt;h2 id=&#34;1-apa-itu-epoch-time&#34;&gt;1. Apa itu Epoch Time?&lt;/h2&gt;&#xA;&lt;p&gt;Epoch Time adalah standardisasi representasi waktu yang digunakan di Unix timestamp yang setiap digit nomornya merepresentasikan setiap detik dari 1 Januari 1970. Epoch time mengandung 10 digit dan dapat merepresentasikan semua zona waktu dengan menambah 3600 detik setiap zonanya. Karena kegunaan standarnya digunakan di dalam database atau log, kita akan seringkali bersentuhan dengan Epoch format ini untuk melakukan konversi ke standar waktu biasa atau sebaliknya.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Example Reference</title>
+      <link>http://localhost:1313/docs/reference/example-reference/</link>
+      <pubDate>Thu, 07 Sep 2023 16:13:18 +0200</pubDate>
+      <guid>http://localhost:1313/docs/reference/example-reference/</guid>
+      <description>&lt;p&gt;Reference pages are ideal for outlining how things work in terse and clear terms. Less concerned with telling a story or addressing a specific use case, they should give a comprehensive outline of what your documenting.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Resources</title>
+      <link>http://localhost:1313/docs/resources/</link>
+      <pubDate>Tue, 27 Feb 2024 09:30:56 +0100</pubDate>
+      <guid>http://localhost:1313/docs/resources/</guid>
+      <description>&lt;p&gt;Link to valuable, relevant resources.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Privacy Policy</title>
+      <link>http://localhost:1313/privacy/</link>
+      <pubDate>Thu, 07 Sep 2023 17:19:07 +0200</pubDate>
+      <guid>http://localhost:1313/privacy/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

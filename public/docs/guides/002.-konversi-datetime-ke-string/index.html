@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+<script 
+  src="/js/color-mode.f14b3e296de1d0b69e75af684b62a4a912a2cadab04e36123407cd8388204f1d.js"
+  integrity="sha256-8Us&#43;KW3h0Laeda9oS2KkqRKiytqwTjYSNAfNg4ggTx0=">
+</script>
+
+
+<link rel="stylesheet" href="/main.52a15a5281f3741f104c7495f4ee05d9e98778365c10f57402c313e545ab8a5bef87bcf184c7f585830a9749adc3837e3087acf145ec0b826a43a16ef7e08e52.css" integrity="sha512-UqFaUoHzdB8QTHSV9O4F2emHeDZcEPV0AsMT5UWrilvvh7zxhMf1hYMKl0mtw4N&#43;MIes8UXsC4JqQ6Fu9&#43;COUg==" crossorigin="anonymous">
+
+<noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/docs/guides/002.-konversi-datetime-ke-string/">
+
+  <link rel="canonical" href="http://localhost:1313/docs/guides/002.-konversi-datetime-ke-string/">
+
+
+<title>002. Konversi Datetime ke String  |  vincentwidyan</title>
+<meta name="description" content="Congrats on setting up a new Doks project!">
+
+    
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    
+      <link
+        rel="apple-touch-icon"
+        href="/apple-touch-icon.png"
+        sizes="180x180"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-192x192.png"
+        sizes="192x192"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-512x512.png"
+        sizes="512x512"
+        type="image/png"
+      >
+<link rel="manifest" href="/manifest.webmanifest">
+
+<meta property="og:url" content="http://localhost:1313/docs/guides/002.-konversi-datetime-ke-string/">
+  <meta property="og:site_name" content="vincentwidyan">
+  <meta property="og:title" content="002. Konversi Datetime ke String">
+  <meta property="og:description" content="Saat coding dengan Python, terkadang kita akan membutuhkan sebuah nilai Datetime/Timestamp yang perlu disimpan dalam tipe data string. Selain mungkin kita akan menggunakannya untuk debugging/print, kita dapat mengguanak skema ini untuk menamai file output kita. Di tutorial kali ini, akan dijelaskan langkah-langkah untuk melakukan konversi tipe data Datetime ke String di Python.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:published_time" content="2023-09-07T16:04:48+02:00">
+    <meta property="article:modified_time" content="2023-09-07T16:04:48+02:00">
+    <meta property="og:image" content="http://localhost:1313/cover.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/cover.png">
+  <meta name="twitter:title" content="002. Konversi Datetime ke String">
+  <meta name="twitter:description" content="Saat coding dengan Python, terkadang kita akan membutuhkan sebuah nilai Datetime/Timestamp yang perlu disimpan dalam tipe data string. Selain mungkin kita akan menggunakannya untuk debugging/print, kita dapat mengguanak skema ini untuk menamai file output kita. Di tutorial kali ini, akan dijelaskan langkah-langkah untuk melakukan konversi tipe data Datetime ke String di Python.">
+      <meta name="twitter:site" content="@getdoks">
+
+    
+    
+    <script type="application/ld+json">
+  {
+   "@context": "https://schema.org",
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/",
+       "name": "Welcome to Doks",
+       "position": 1
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/docs/",
+       "name": "Docs",
+       "position": 2
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/docs/guides/",
+       "name": "Tutorial Python",
+       "position": 3
+     },
+     {
+       "@type": "ListItem",
+       "name": "002. Konversi Datetime Ke String",
+       "position": 4
+     }
+   ]
+ }
+</script>
+
+
+
+
+
+
+
+</head>
+
+  
+  <body class="single section docs" data-bs-spy="scroll" data-bs-target="#toc" data-bs-root-margin="0px 0px -60%" data-bs-smooth-scroll="true" tabindex="0">
+    <div class="sticky-top">
+<div class="header-bar"></div>
+<header class="navbar navbar-expand-lg">
+  <div class="container-lg">
+  
+    <a class="navbar-brand me-auto me-lg-3" href="/">vincentwidyan</a>
+
+    
+    
+    <button type="button" id="searchToggleMobile" class="btn btn-link nav-link mx-2 d-lg-none" aria-label="Search website">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <circle cx="10" cy="10" r="7"></circle>
+        <line x1="21" y1="21" x2="15" y2="15"></line>
+      </svg>
+    </button>
+    
+    <button class="btn btn-link d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavSection" aria-controls="offcanvasNavSection" aria-label="Open section navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+      </svg>
+    </button>
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasNavSection" aria-labelledby="offcanvasNavSectionLabel">
+      <div class="header-bar"></div>
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavSectionLabel">Docs</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <aside class="doks-sidebar mt-n3">
+          <nav id="doks-docs-nav" aria-label="Tertiary navigation">
+            
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open open>
+      <summary>Tutorial Python</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/guides/konversi-string-ke-datetime/">Konversi String ke Datetime</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/docs/guides/002.-konversi-datetime-ke-string/">002. Konversi Datetime ke String</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Reference</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/reference/example-reference/">Example Reference</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+      <a href="/docs/resources/">Resources</a>
+  </li>
+  </ul>
+</nav>
+
+
+          </nav>
+        </aside>
+      </div>
+    </div>
+    
+    <button class="btn btn-link nav-link mx-2 order-3 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavMain" aria-controls="offcanvasNavMain" aria-label="Open main navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <line x1="4" y1="8" x2="20" y2="8"></line>
+        <line x1="4" y1="16" x2="20" y2="16"></line>
+      </svg>
+    </button>
+
+    
+    <div class="offcanvas offcanvas-end h-auto" tabindex="-1" id="offcanvasNavMain" aria-labelledby="offcanvasNavMainLabel">
+      <div class="header-bar d-lg-none"></div>
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">vincentwidyan</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+         </svg>
+        </button>
+      </div>
+      
+      <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
+        <ul class="navbar-nav flex-grow-1"><li class="nav-item">
+                <a class="nav-link active" href="http://localhost:1313/docs/" aria-current="true">Docs</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/blog/">Blog</a>
+              </li>
+            </ul>
+
+        
+        
+        <button type="button" id="searchToggleDesktop" class="btn btn-link nav-link p-2 d-none d-lg-block" aria-label="Search website">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <circle cx="10" cy="10" r="7"></circle>
+            <line x1="21" y1="21" x2="15" y2="15"></line>
+          </svg>
+        </button>
+        
+        
+        
+        <button id="buttonColorMode" class="btn btn-link mx-auto nav-link p-0 ms-lg-2 me-lg-1" type="button" aria-label="Toggle theme">
+          <svg data-bs-theme-value="dark" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+          </svg>
+          <svg data-bs-theme-value="light" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0m-5 0h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
+          </svg>
+        </button>
+        
+        <ul id="socialMenu" class="nav mx-auto flex-row order-lg-4">
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://github.com/thuliteio/doks"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg><small class="ms-2 visually-hidden">GitHub</small></a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://github.com/thuliteio/doks"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-link"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 15l6 -6" /><path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464" /><path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463" /></svg><small class="ms-2 visually-hidden">Linkinbio</small></a>
+            </li>
+          </ul>
+        
+        </div>
+    </div>
+
+    
+    </div>
+</header>
+</div>
+
+<div class="modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-md-down">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 visually-hidden" id="searchModalLabel">Search</h1>
+        <button type="button" class="btn-close visually-hidden" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="search-input flex-grow-1 d-none">
+          <form id="search-form" class="search-form" action="#" method="post" accept-charset="UTF-8" role="search">
+            <label for="query" class="visually-hidden">Search</label>
+            <div class="d-flex">
+              <input type="search" id="query" name="query" class="search-text form-control form-control-lg" placeholder="Search" aria-label="Search" maxlength="128" autocomplete="off">
+              <button type="button" class="btn btn-link text-decoration-none px-0 ms-3 d-md-none" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="search-loading status message d-none mt-3 text-center">Loading search index…</p>
+        <p class="search-no-recent message d-none mt-3 text-center">No recent searches</p>
+        <p class="search-no-results message d-none mt-3 text-center">No results for "<strong><span class="query-no-results">Query here</span></strong>"</p>
+        <div id="searchResults" class="search-results"></div>
+        <template>
+          <article class="search-result list-view">
+            <div class="card my-3">
+              <div class="card-body">
+                <header>
+                  <h2 class="h5 title title-submitted mb-0"><a class="stretched-link text-decoration-none text-reset" href="#">Title here</a></h2>
+                  <div class="submitted d-none"><time class="created-date">Date here</time></div>
+                </header>
+                <div class="content">Summary here</div>
+              </div>
+            </div>
+          </article>
+        </template>
+      </div>
+      <div class="modal-footer">
+        <ul class="list-inline me-auto d-none d-md-block">
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Enter key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M12 3.53088v3c0 1-1 2-2 2H4M7 11.53088l-3-3 3-3"></path></g></svg></kbd><span class="DocSearch-Label">to select</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path></g></svg></kbd><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path></g></svg></kbd><span class="DocSearch-Label">to navigate</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Escape key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956"></path></g></svg></kbd><span class="DocSearch-Label">to close</span></li>
+        </ul>
+        <p class="d-md-none">Search by <a class="text-decoration-none" href="https://github.com/nextapps-de/flexsearch">FlexSearch</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="wrap container-lg" role="document">
+      <div class="content">
+      
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar docs-sidebar-offset d-none d-lg-block">
+			
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open open>
+      <summary>Tutorial Python</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/guides/konversi-string-ke-datetime/">Konversi String ke Datetime</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/docs/guides/002.-konversi-datetime-ke-string/">002. Konversi Datetime ke String</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Reference</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/reference/example-reference/">Example Reference</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+      <a href="/docs/resources/">Resources</a>
+  </li>
+  </ul>
+</nav>
+
+
+		</div>
+		
+		<nav class="docs-toc docs-toc-offset d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="page-links">
+  <h3>On this page</h3>
+    <nav id="toc">
+  <ul>
+    <li><a href="#1--apa-yang-harus-dilakukan-sebelum-mengikuti-tutorial-ini">1.  Apa yang harus dilakukan sebelum mengikuti tutorial ini?</a></li>
+    <li><a href="#2-cara-konversi-datetime-ke-string-di-python">2. Cara Konversi Datetime ke String di Python</a>
+      <ul>
+        <li><a href="#21-import-datetime-library">2.1 Import Datetime Library</a></li>
+        <li><a href="#22-me-_assign_-ke-sebuah-variable">2.2 Me-<em>assign</em> ke sebuah Variable</a></li>
+        <li><a href="#23-menggunakan-fungsi-strftime-di-datetime-class">2.3 Menggunakan fungsi <code>strftime()</code> di Datetime Class</a></li>
+        <li><a href="#24-several-format-code">2.4 Several Format Code</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-kode">3. Kode</a></li>
+  </ul>
+</nav>
+</div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9">
+		
+			<h1>002. Konversi Datetime ke String</h1>
+			
+			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
+				<details>
+    <summary>On this page</summary>
+    <div class="page-links">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1--apa-yang-harus-dilakukan-sebelum-mengikuti-tutorial-ini">1.  Apa yang harus dilakukan sebelum mengikuti tutorial ini?</a></li>
+    <li><a href="#2-cara-konversi-datetime-ke-string-di-python">2. Cara Konversi Datetime ke String di Python</a>
+      <ul>
+        <li><a href="#21-import-datetime-library">2.1 Import Datetime Library</a></li>
+        <li><a href="#22-me-_assign_-ke-sebuah-variable">2.2 Me-<em>assign</em> ke sebuah Variable</a></li>
+        <li><a href="#23-menggunakan-fungsi-strftime-di-datetime-class">2.3 Menggunakan fungsi <code>strftime()</code> di Datetime Class</a></li>
+        <li><a href="#24-several-format-code">2.4 Several Format Code</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-kode">3. Kode</a></li>
+  </ul>
+</nav>
+    </div>
+  </details>
+
+			</nav>
+			<p>Saat coding dengan Python, terkadang kita akan membutuhkan sebuah nilai Datetime/Timestamp yang perlu disimpan dalam tipe data <code>string</code>. Selain mungkin kita akan menggunakannya untuk debugging/print, kita dapat mengguanak skema ini untuk menamai file output kita. Di tutorial kali ini, akan dijelaskan langkah-langkah untuk melakukan konversi tipe data Datetime ke String di Python.</p>
+<h2 id="1--apa-yang-harus-dilakukan-sebelum-mengikuti-tutorial-ini">1.  Apa yang harus dilakukan sebelum mengikuti tutorial ini?<a href="#1--apa-yang-harus-dilakukan-sebelum-mengikuti-tutorial-ini" class="anchor" aria-hidden="true">#</a> </h2>
+<ol>
+<li>Pastikan kalian memiliki bahasa pemrograman Python yang terinstall di komputer kalian.</li>
+<li>Pastikan Python sudah <em>include</em> di path Comman Line kalian.</li>
+</ol>
+<div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/rocket svg-inline callout-icon me-2 mb-3" id="svg-rocket" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" />
+  <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" />
+  <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>For Your Info?</p>
+
+      </div>
+    <div class="callout-body">
+      <p>Jika kalian tidak ingin menginstall Python di komputer, kalian bisa gunakan <strong>Google Colaboratory</strong> dan <em>coding</em> dimanapun di <em>browser</em> kalian.</p>
+
+    </div>
+  </div>
+</div>
+
+<h2 id="2-cara-konversi-datetime-ke-string-di-python">2. Cara Konversi Datetime ke String di Python<a href="#2-cara-konversi-datetime-ke-string-di-python" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Pada part ini, akan dijleaskan mengenai langkah-langkah melakukan konversi tipe data datetime ke tipe data string di Python. Datetime yang digunakan di Python akan memiliki tipe data <code>struct</code>. Bagi beberapa orang, tipe data <code>struct</code> terbilang susah untuk diubah bentuk/digunakan pada beberapa skenario. Alih-alih tetap menggunakannya, biasanya tipe data ini akan lebih mudah jika dikonversi ke dalam tipe data <code>string</code>. Di bawah ini adalah langkah-langkah untuk mengkonversikan datetime dengan tipe data <code>struct</code> ke tipe data <code>string</code> :</p>
+<h3 id="21-import-datetime-library">2.1 Import Datetime Library<a href="#21-import-datetime-library" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Pertama-tama, kita perlu untuk melakukan import <em>library</em> Datetime. Biasanya, <em>library</em> ini sudah terinstall saat kita melakukan instalasi Python. Jika tidak, kalian bisa menggunakan <em>command</em> <code>pip install datetime</code> di command line/terminal komputer kalian. Akan tetapi, jika kalian memilih Google Colaboratory, kalian tidak perlu kesusahan untuk melakukan instalasi ini. Kode di bawah ini diperlukan untuk melakukan import <em>library</em> <code>datetime</code>.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># TODO : Import Datetime Library</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span></span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="22-me-_assign_-ke-sebuah-variable">2.2 Me-<em>assign</em> ke sebuah Variable<a href="#22-me-_assign_-ke-sebuah-variable" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Setelah melakukan import, nilai datetime tersebut perlu di-<em>assign</em> ke sebuah variable karena kemungkinan besar nantinya nilai tersebut akan digunakan beberapa kali. Dengan kode di bawah ini, kita meng-<em>assign</em> nilai <code>datetime</code> tersebut ke variable dengan nama <code>datetoday</code> yang didapat menggunakan fungsi <code>datetime.today()</code>.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># TODO : Assign to a Variable</span>
+</span></span><span class="line"><span class="cl"><span class="n">datetoday</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span></span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="23-menggunakan-fungsi-strftime-di-datetime-class">2.3 Menggunakan fungsi <code>strftime()</code> di Datetime Class<a href="#23-menggunakan-fungsi-strftime-di-datetime-class" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Disinilah fungsi yang ditunggu-tunggu. Fungsi <code>strftime()</code> dapat melakukan konversi <code>datetime</code> dengan tipe data <code>struct</code> ke tipe data <code>string</code> di Python. Terdapat pula beberapa format untuk merepresentasikan <code>datetime</code> tersebut.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># TODO : Assign to Variable with varying Format</span>
+</span></span><span class="line"><span class="cl"><span class="n">fulltimestamp</span> <span class="o">=</span> <span class="n">datetoday</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&#34;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">dateformat</span> <span class="o">=</span> <span class="n">datetoday</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">%d</span><span class="s2">/%m/%y&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">otherdateformat</span> <span class="o">=</span> <span class="n">datetoday</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&#34;%A, %B </span><span class="si">%d</span><span class="s2"> %Y&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">time24hour</span> <span class="o">=</span> <span class="n">datetoday</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&#34;%H:%M:%S&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">time12hour</span> <span class="o">=</span> <span class="n">datetoday</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&#34;%I:%M:%S %p&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># TODO : Print each variable format</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1. Full Timestamp Format :&#39;</span><span class="p">,</span> <span class="n">fulltimestamp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2. Date Format :&#39;</span><span class="p">,</span> <span class="n">dateformat</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;3. Other Date Format :&#39;</span><span class="p">,</span> <span class="n">otherdateformat</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;4. 24-Hour Format :&#39;</span><span class="p">,</span> <span class="n">time24hour</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;5. 12-Hour Format :&#39;</span><span class="p">,</span> <span class="n">time12hour</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+<p>Keluarannya adalah :</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">1. Full Timestamp Format : 2023-02-11 09:53:20
+</span></span><span class="line"><span class="cl">2. Date Format : 11/02/23
+</span></span><span class="line"><span class="cl">3. Other Date Format : Saturday, February 11 2023
+</span></span><span class="line"><span class="cl">4. 24-Hour Format : 09:53:20
+</span></span><span class="line"><span class="cl">5. 12-Hour Format : 09:53:20 AM</span></span></code></pre></div>
+  </figure>
+</div>
+<h3 id="24-several-format-code">2.4 Several Format Code<a href="#24-several-format-code" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Berikut merupakan daftar format <code>strftime</code> di Python yang biasanya digunakan. Untuk mendapatkan daftar lengkapnya, dapat dilihat di laman [[Python Datetime strftime() Format Code |ini]]</p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Format</strong></th>
+          <th><strong>Description</strong></th>
+          <th><strong>Result</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>%d</td>
+          <td>Menampilkan hari sebagai zero-padded desimal</td>
+          <td>01,02…,31</td>
+      </tr>
+      <tr>
+          <td>%A</td>
+          <td>Menampilkan weekday lengkap</td>
+          <td>Sunday, Monday,…</td>
+      </tr>
+      <tr>
+          <td>%m</td>
+          <td>Menampilkan bulan sebagai zero-padded desimal</td>
+          <td>01,02…,12</td>
+      </tr>
+      <tr>
+          <td>%B</td>
+          <td>Menampilakn nama bulan</td>
+          <td>January, February,…</td>
+      </tr>
+      <tr>
+          <td>%y</td>
+          <td>Menampilkan tahun sebagai zero-padded decimal</td>
+          <td>97,98,…,07,13,23</td>
+      </tr>
+      <tr>
+          <td>%Y</td>
+          <td>Menampilkan nomor tahun lengkap</td>
+          <td>1998,2010,…,2023</td>
+      </tr>
+      <tr>
+          <td>%H</td>
+          <td>Menampilkan 24-Hour Format</td>
+          <td>01,02,…,23</td>
+      </tr>
+      <tr>
+          <td>%I</td>
+          <td>Menampilkan 12-Hour Format</td>
+          <td>01,02,…,12</td>
+      </tr>
+      <tr>
+          <td>%M</td>
+          <td>Menampilkan menit sebagai zero-padded desimal</td>
+          <td>01,02,…,59</td>
+      </tr>
+      <tr>
+          <td>%S</td>
+          <td>Menampilkan detik sebagai zero-padded desimal</td>
+          <td>01,02,…,59</td>
+      </tr>
+      <tr>
+          <td>%p</td>
+          <td>Menampilkan tanda 12-Hour</td>
+          <td>AM,PM</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="3-kode">3. Kode<a href="#3-kode" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Berikut merupakan kode lengkap cara melakukan konvert nilai <code>datetime</code> ke tipe data <code>string</code> di Python.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># TODO : Import Datetime Library</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># TODO : Assign to a Variable</span>
+</span></span><span class="line"><span class="cl"><span class="n">datetoday</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># TODO : Assign to Variable with varying Format</span>
+</span></span><span class="line"><span class="cl"><span class="n">fulltimestamp</span> <span class="o">=</span> <span class="n">datetoday</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&#34;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">dateformat</span> <span class="o">=</span> <span class="n">datetoday</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">%d</span><span class="s2">/%m/%y&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">otherdateformat</span> <span class="o">=</span> <span class="n">datetoday</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&#34;%A, %B </span><span class="si">%d</span><span class="s2"> %Y&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">time24hour</span> <span class="o">=</span> <span class="n">datetoday</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&#34;%H:%M:%S&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">time12hour</span> <span class="o">=</span> <span class="n">datetoday</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&#34;%I:%M:%S %p&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># TODO : Print each variable format</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1. Full Timestamp Format :&#39;</span><span class="p">,</span> <span class="n">fulltimestamp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2. Date Format :&#39;</span><span class="p">,</span> <span class="n">dateformat</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;3. Other Date Format :&#39;</span><span class="p">,</span> <span class="n">otherdateformat</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;4. 24-Hour Format :&#39;</span><span class="p">,</span> <span class="n">time24hour</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;5. 12-Hour Format :&#39;</span><span class="p">,</span> <span class="n">time12hour</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+
+			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
+				</div>
+			<div class="page-nav d-flex flex-column flex-sm-row">
+	
+	<div class="card w-100">
+			<div class="card-body d-flex">
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M5 12l6 6"></path>
+						<path d="M5 12l6 -6"></path>
+				 	</svg>
+				</div>
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Prev</div>
+					<a href="/docs/guides/konversi-string-ke-datetime/" class="stretched-link text-reset text-decoration-none">Konversi String ke Datetime</a>
+				</div>
+			</div>
+		</div>
+	<div class="m-2"></div>
+	<div class="card text-end w-100">
+			<div class="card-body d-flex justify-content-end">
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Next</div>
+					<a href="/docs/reference/example-reference/" class="stretched-link text-reset text-decoration-none">Example Reference</a>
+				</div>
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M13 18l6 -6"></path>
+						<path d="M13 6l6 6"></path>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+
+			
+		</main>
+		
+	</div>
+
+      
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container-lg">
+    <div class="row">
+      <div class="col-lg-8 text-center text-lg-start">
+        <ul class="list-inline">
+          <li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 text-center text-lg-end">
+        <ul class="list-inline">
+          <li class="list-inline-item">Brought to you by <a class="text-muted" href="https://thulite.io/">Thulite</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script async
+  src="/js/app.45fe97f3220974be2352afdeca83837158899f488c91db73745b0776945e0fb4.js"
+  integrity="sha256-Rf6X8yIJdL4jUq/eyoODcViJn0iMkdtzdFsHdpReD7Q=">
+</script>
+
+
+
+
+
+<script async
+  src="/js/flexsearch.8350d2f520e131f8552ed57c1eadd05c50eccf0427267781442dd8ddf8fdcdf7.js"
+  integrity="sha256-g1DS9SDhMfhVLtV8Hq3QXFDszwQnJneBRC3Y3fj9zfc=">
+</script>
+<script async
+  src="/js/search-modal.877cece5b6bc789456f89fa1955ccfcd8a5acdb2179e7882e292a6caa49efe68.js"
+  integrity="sha256-h3zs5ba8eJRW&#43;J&#43;hlVzPzYpazbIXnniC4pKmyqSe/mg=">
+</script>
+
+    
+  </body>
+</html>

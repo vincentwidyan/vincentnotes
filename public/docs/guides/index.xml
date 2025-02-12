@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tutorial Python on vincentwidyan</title>
+    <link>http://localhost:1313/docs/guides/</link>
+    <description>Recent content in Tutorial Python on vincentwidyan</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) 2020-2024 Thulite</copyright>
+    <lastBuildDate>Thu, 07 Sep 2023 16:04:48 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/docs/guides/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Konversi String ke Datetime</title>
+      <link>http://localhost:1313/docs/guides/konversi-string-ke-datetime/</link>
+      <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
+      <guid>http://localhost:1313/docs/guides/konversi-string-ke-datetime/</guid>
+      <description>&lt;p&gt;Seringkali ketika sedang melakukan &lt;em&gt;coding&lt;/em&gt; dengan Python, terdapat waktu yang direpresentasikan dengan tipe data string dan dibutuhkan konversi kembali ke nilai &lt;code&gt;datetime&lt;/code&gt; dengan tipe data struct untuk tujuan tertentu. Di tutorial kali ini, akan dijelaskan mengenai cara konversi tipe data string ke &lt;code&gt;datetime&lt;/code&gt; di Python.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Konversi Datetime ke String</title>
+      <link>http://localhost:1313/docs/guides/konversi-datetime-ke-string/</link>
+      <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
+      <guid>http://localhost:1313/docs/guides/konversi-datetime-ke-string/</guid>
+      <description>&lt;p&gt;Saat coding dengan Python, terkadang kita akan membutuhkan sebuah nilai Datetime/Timestamp yang perlu disimpan dalam tipe data &lt;code&gt;string&lt;/code&gt;. Selain mungkin kita akan menggunakannya untuk debugging/print, kita dapat mengguanak skema ini untuk menamai file output kita. Di tutorial kali ini, akan dijelaskan langkah-langkah untuk melakukan konversi tipe data Datetime ke String di Python.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Konversi Epoch ke Time Format</title>
+      <link>http://localhost:1313/docs/guides/konversi-epoch-ke-time-format/</link>
+      <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
+      <guid>http://localhost:1313/docs/guides/konversi-epoch-ke-time-format/</guid>
+      <description>&lt;h2 id=&#34;1-apa-itu-epoch-time&#34;&gt;1. Apa itu Epoch Time?&lt;/h2&gt;&#xA;&lt;p&gt;Epoch Time adalah standardisasi representasi waktu yang digunakan di Unix timestamp yang setiap digit nomornya merepresentasikan setiap detik dari 1 Januari 1970. Epoch time mengandung 10 digit dan dapat merepresentasikan semua zona waktu dengan menambah 3600 detik setiap zonanya. Karena kegunaan standarnya digunakan di dalam database atau log, kita akan seringkali bersentuhan dengan Epoch format ini untuk melakukan konversi ke standar waktu biasa atau sebaliknya.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
