@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Welcome to Doks on vincentwidyan</title>
+    <title>Welcome to my Notes on vincentwidyan</title>
     <link>http://localhost:1313/</link>
-    <description>Recent content in Welcome to Doks on vincentwidyan</description>
+    <description>Recent content in Welcome to my Notes on vincentwidyan</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2020-2024 Thulite</copyright>
@@ -38,18 +38,11 @@
       <description>&lt;h2 id=&#34;1-apa-itu-epoch-time&#34;&gt;1. Apa itu Epoch Time?&lt;/h2&gt;&#xA;&lt;p&gt;Epoch Time adalah standardisasi representasi waktu yang digunakan di Unix timestamp yang setiap digit nomornya merepresentasikan setiap detik dari 1 Januari 1970. Epoch time mengandung 10 digit dan dapat merepresentasikan semua zona waktu dengan menambah 3600 detik setiap zonanya. Karena kegunaan standarnya digunakan di dalam database atau log, kita akan seringkali bersentuhan dengan Epoch format ini untuk melakukan konversi ke standar waktu biasa atau sebaliknya.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Example Reference</title>
-      <link>http://localhost:1313/docs/reference/example-reference/</link>
-      <pubDate>Thu, 07 Sep 2023 16:13:18 +0200</pubDate>
-      <guid>http://localhost:1313/docs/reference/example-reference/</guid>
-      <description>&lt;p&gt;Reference pages are ideal for outlining how things work in terse and clear terms. Less concerned with telling a story or addressing a specific use case, they should give a comprehensive outline of what your documenting.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Resources</title>
-      <link>http://localhost:1313/docs/resources/</link>
+      <title>Introduction</title>
+      <link>http://localhost:1313/docs/introduction/</link>
       <pubDate>Tue, 27 Feb 2024 09:30:56 +0100</pubDate>
-      <guid>http://localhost:1313/docs/resources/</guid>
-      <description>&lt;p&gt;Link to valuable, relevant resources.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/docs/introduction/</guid>
+      <description>&lt;p&gt;Halo nama saya Vincent. Di sini tempat dimana saya menyimpan ide-ide dan tulisan saya. Selamat berkelana!&lt;/p&gt;</description>
     </item>
     <item>
       <title>Privacy Policy</title>

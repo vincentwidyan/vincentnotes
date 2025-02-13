@@ -1,5 +1,5 @@
 ---
-title: "Resources"
+title: "Introduction"
 description: ""
 summary: ""
 date: 2024-02-27T09:30:56+01:00
@@ -14,4 +14,5 @@ seo:
   robots: "" # custom robot tags (optional)
 ---
 
-Link to valuable, relevant resources.
+Halo nama saya Vincent. Di sini tempat dimana saya menyimpan ide-ide dan tulisan saya. Selamat berkelana!
+

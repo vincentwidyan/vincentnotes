@@ -16,7 +16,7 @@
     </url>
     
     <url>
-      <loc>http://localhost:1313/docs/resources/</loc>
+      <loc>http://localhost:1313/docs/introduction/</loc>
       <lastmod>2024-02-27T09:30:56+01:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
@@ -36,12 +36,6 @@
       <url>
         <loc>http://localhost:1313/docs/guides/konversi-epoch-ke-time-format/</loc>
         <lastmod>2023-09-07T16:04:48+02:00</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-      </url>
-      <url>
-        <loc>http://localhost:1313/docs/reference/example-reference/</loc>
-        <lastmod>2023-09-07T16:13:18+02:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
