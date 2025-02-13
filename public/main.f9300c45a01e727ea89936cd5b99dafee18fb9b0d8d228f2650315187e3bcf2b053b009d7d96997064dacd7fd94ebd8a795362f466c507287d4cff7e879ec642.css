@@ -14713,7 +14713,6 @@ img.zoomed {
 img {
   height: 100%;
   width: 100%;
-  object-fit: cover;
-  border-radius: var(--bs-border-radius); }
+  object-fit: cover; }
 
 /*# sourceMappingURL=main.css.map */

@@ -14711,9 +14711,8 @@ img.zoomed {
   background: black; }
 
 img {
-  height: 100%;
+  height: 300px;
   width: 100%;
-  object-fit: cover;
-  border-radius: var(--bs-border-radius); }
+  object-fit: cover; }
 
 /*# sourceMappingURL=main.css.map */

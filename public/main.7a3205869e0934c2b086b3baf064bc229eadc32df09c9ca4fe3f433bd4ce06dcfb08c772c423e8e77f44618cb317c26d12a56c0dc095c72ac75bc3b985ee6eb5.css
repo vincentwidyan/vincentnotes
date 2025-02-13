@@ -14710,10 +14710,4 @@ img.zoomed {
   z-index: 100000;
   background: black; }
 
-img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  border-radius: var(--bs-border-radius); }
-
 /*# sourceMappingURL=main.css.map */

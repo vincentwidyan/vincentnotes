@@ -11,7 +11,7 @@
 </script>
 
 
-<link rel="stylesheet" href="/main.2ca50c417d9bd9cbab920218ca1c2fcea5bf12234ef8cd9222fe92b7458ed821d39f0f46f2c67527a69378fa2aa330bd24e54b81cb59484f4a8ca6e34bf5ba49.css" integrity="sha512-LKUMQX2b2curkgIYyhwvzqW/EiNO&#43;M2SIv6St0WO2CHTnw9G8sZ1J6aTePoqozC9JOVLgctZSE9KjKbjS/W6SQ==" crossorigin="anonymous">
+<link rel="stylesheet" href="/main.509629347f2b9cafbc89bfc0e4a6e2bad6fe35cc440dd383c31cc86c80552c41276bea1899f7bb425927635f236accaacf70f68a778c93cc668c623e9d1d8883.css" integrity="sha512-UJYpNH8rnK&#43;8ib/A5Kbiutb&#43;NcxEDdODwxzIbIBVLEEna&#43;oYmfe7QlknY18jasyqz3D2ineMk8xmjGI&#43;nR2Igw==" crossorigin="anonymous">
 
 <noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/docs/guides/konversi-epoch-ke-time-format/">
 
@@ -498,24 +498,26 @@
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># TODO : Import datetime library</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># TODO : Convert Epoch to Datetime</span>
-</span></span><span class="line"><span class="cl"><span class="n">epochTime</span> <span class="o">=</span> <span class="mi">1676106378</span>
-</span></span><span class="line"><span class="cl"><span class="n">currentTime</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">epochTime</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1. Current Epoch to Datetime : &#39;</span><span class="p">,</span><span class="n">currentTime</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># TODO : Convert Datetime to Epoch</span>
-</span></span><span class="line"><span class="cl"><span class="n">todaydate</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="n">epoch_convert</span> <span class="o">=</span> <span class="n">todaydate</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2. Current Full Epoch Timestamp : &#39;</span><span class="p">,</span><span class="n">epoch_convert</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;3. Current Only Date Epoch Timestamp : &#39;</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">epoch_convert</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c1"># TODO : Import datetime library</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="c1"># TODO : Convert Epoch to Datetime</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="n">epochTime</span> <span class="o">=</span> <span class="mi">1676106378</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="n">currentTime</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">epochTime</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1. Current Epoch to Datetime : &#39;</span><span class="p">,</span><span class="n">currentTime</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="c1"># TODO : Convert Datetime to Epoch</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="n">todaydate</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="n">epoch_convert</span> <span class="o">=</span> <span class="n">todaydate</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2. Current Full Epoch Timestamp : &#39;</span><span class="p">,</span><span class="n">epoch_convert</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;3. Current Only Date Epoch Timestamp : &#39;</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">epoch_convert</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span></span></span></code></pre></div>
   </figure>
 </div>
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
-				</div>
+				<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="vincentwidyan" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+			</div>
 			<div class="page-nav d-flex flex-column flex-sm-row">
 	
 	<div class="card w-100">
@@ -586,6 +588,7 @@
   src="/js/app.45fe97f3220974be2352afdeca83837158899f488c91db73745b0776945e0fb4.js"
   integrity="sha256-Rf6X8yIJdL4jUq/eyoODcViJn0iMkdtzdFsHdpReD7Q=">
 </script>
+
 
 
 

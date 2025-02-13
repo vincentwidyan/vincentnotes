@@ -7,6 +7,8 @@ draft: false
 weight: 812
 toc: true
 ---
+
+
 ## 1. Apa itu Epoch Time?
 Epoch Time adalah standardisasi representasi waktu yang digunakan di Unix timestamp yang setiap digit nomornya merepresentasikan setiap detik dari 1 Januari 1970. Epoch time mengandung 10 digit dan dapat merepresentasikan semua zona waktu dengan menambah 3600 detik setiap zonanya. Karena kegunaan standarnya digunakan di dalam database atau log, kita akan seringkali bersentuhan dengan Epoch format ini untuk melakukan konversi ke standar waktu biasa atau sebaliknya.
 
@@ -54,7 +56,7 @@ Keluarannya adalah :
 ## 3. Kode
 Berikut kode untuk melakukan konversi Epoch ke `datetime` dan konversi `datetime` ke Epoch di Python.
 
-```python
+```python {lineNos=true}
 # TODO : Import datetime library
 from datetime import datetime
 
